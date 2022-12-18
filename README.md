@@ -1,5 +1,7 @@
 ## Shake Mouse To Locate (Windows)
 
+![2022-12-18_11-49-47](https://user-images.githubusercontent.com/47871887/208316412-7f2980e2-7203-4539-9ba3-2bfe6ead8d59.gif)
+
 Shake or circle the mouse quickly and a big mouse
 will show for a short while. This will help you find
 back the mouse cursor.
