@@ -1,6 +1,5 @@
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
-#AutoIt3Wrapper_Compression=5   ;default 3
-#AutoIt3Wrapper_UseUpx=n
+#AutoIt3Wrapper_UseX64=n
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 
 ; ShakeMouseToLocate -- by Nicolas de Jong
@@ -169,11 +168,13 @@ EndFunc
 Func _moveBigMouse()
   WinMove($win_mouse, "", $avMousePos[0], $avMousePos[1])
   WinSetOnTop($win_mouse, '', 1)
+  _WinAPI_ShowCursor(False)
 EndFunc
 Func _hideBigMouseOnTimeout()
   If TimerDiff($showingTimer) >= $SHOWING_TIMEOUT Then
     _hideBig()
     $shakeCount = 0
+		_WinAPI_ShowCursor(True)
   EndIf
 EndFunc
 Func _updateMouse()
@@ -182,8 +183,8 @@ Func _updateMouse()
     _hideBigMouseOnTimeout()
   Else
 	  If _isShaking() Then
-		 _showBig()
-     _moveBigMouse()
+			_showBig()
+			_moveBigMouse()
 	  EndIf
   EndIf
 
