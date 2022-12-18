@@ -118,6 +118,12 @@ While $running = 1
   _detectMouseMoves()
   _updateMouse()
   _handleTrayEvents()
+
+	;~If $showing = 1 Then
+	;~	_WinAPI_ShowCursor(False)
+	;~Else
+	;~	_WinAPI_ShowCursor(True)
+	;~EndIf
 WEnd
 
 Func _detectMouseMoves()
@@ -179,12 +185,17 @@ Func _hideBigMouseOnTimeout()
 EndFunc
 Func _updateMouse()
   If $showing = 1 Then
+		;~_WinAPI_ShowCursor(False)
     _moveBigMouse()
     _hideBigMouseOnTimeout()
   Else
+	  ;~_WinAPI_ShowCursor(True)
 	  If _isShaking() Then
+			;~_WinAPI_ShowCursor(False)
 			_showBig()
 			_moveBigMouse()
+	  Else
+		;~_WinAPI_ShowCursor(True)
 	  EndIf
   EndIf
 
